@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Numerics;
 
 namespace Factorial
 {
@@ -10,19 +7,16 @@ namespace Factorial
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Enter a positive number to calculate its factorial");
+            Console.WriteLine("Enter a positive number to calculate its factorial:");
             int num = Convert.ToInt32(Console.ReadLine());
 
-            long result = CalculateFactorial(num);
+            BigInteger result = CalculateFactorial(num);
             Console.WriteLine($"{num}! = {result}");
 
-            Console.ReadLine(); 
+            Console.ReadLine();
         }
 
-
-
-        static long CalculateFactorial (int n)
+        static BigInteger CalculateFactorial(int n)
         {
             if (n < 0)
             {
@@ -30,7 +24,7 @@ namespace Factorial
                 return -1;
             }
 
-            long factorial = 1;
+            BigInteger factorial = 1;
 
             for (int i = 1; i <= n; i++)
             {
@@ -39,7 +33,5 @@ namespace Factorial
 
             return factorial;
         }
-
-        
     }
 }
